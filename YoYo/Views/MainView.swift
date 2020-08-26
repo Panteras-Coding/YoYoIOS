@@ -13,7 +13,7 @@ struct MainView: View {
     @Binding  var x : CGFloat
     var body: some View {
         ZStack {
-            MapView().edgesIgnoringSafeArea(.all)
+            GoogleMapsView().edgesIgnoringSafeArea(.all)
             VStack {
                 HStack {
                     Button(action: {

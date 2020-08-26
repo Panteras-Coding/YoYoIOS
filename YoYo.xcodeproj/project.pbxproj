@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2C5C0324F6A6040057DDCE /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */; };
+		3A2C5C0524F6A65C0057DDCE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */; };
 		7DE3FC3E24E643EF00D8010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC3D24E643EF00D8010C /* AppDelegate.swift */; };
 		7DE3FC4024E643EF00D8010C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC3F24E643EF00D8010C /* SceneDelegate.swift */; };
 		7DE3FC4324E643EF00D8010C /* YoYo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC4124E643EF00D8010C /* YoYo.xcdatamodeld */; };
@@ -16,9 +18,14 @@
 		7DE3FC4D24E643F200D8010C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DE3FC4B24E643F200D8010C /* LaunchScreen.storyboard */; };
 		7DE3FC5724E6445500D8010C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC5624E6445500D8010C /* MainView.swift */; };
 		7DE3FC5924E6448100D8010C /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC5824E6448100D8010C /* SlideView.swift */; };
+		D69EA9CAF87EB6365CDA6AD2 /* Pods_YoYo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4627B9DE65D9948934BFE814 /* Pods_YoYo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
+		3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		41627568599AB81340FD178C /* Pods-YoYo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo.release.xcconfig"; path = "Target Support Files/Pods-YoYo/Pods-YoYo.release.xcconfig"; sourceTree = "<group>"; };
+		4627B9DE65D9948934BFE814 /* Pods_YoYo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE3FC3A24E643EF00D8010C /* YoYo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE3FC3D24E643EF00D8010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DE3FC3F24E643EF00D8010C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +37,7 @@
 		7DE3FC4E24E643F200D8010C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DE3FC5624E6445500D8010C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7DE3FC5824E6448100D8010C /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
+		DC815B3D7A230D2D46661262 /* Pods-YoYo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo.debug.xcconfig"; path = "Target Support Files/Pods-YoYo/Pods-YoYo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69EA9CAF87EB6365CDA6AD2 /* Pods_YoYo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009FA08030C5A4A2F53FF75A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4627B9DE65D9948934BFE814 /* Pods_YoYo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7DE3FC3124E643EF00D8010C = {
 			isa = PBXGroup;
 			children = (
 				7DE3FC3C24E643EF00D8010C /* YoYo */,
 				7DE3FC3B24E643EF00D8010C /* Products */,
+				9838FFA6DD2F8628993E657A /* Pods */,
+				009FA08030C5A4A2F53FF75A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,8 +107,19 @@
 			children = (
 				7DE3FC5624E6445500D8010C /* MainView.swift */,
 				7DE3FC5824E6448100D8010C /* SlideView.swift */,
+				3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */,
+				3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9838FFA6DD2F8628993E657A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC815B3D7A230D2D46661262 /* Pods-YoYo.debug.xcconfig */,
+				41627568599AB81340FD178C /* Pods-YoYo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DE3FC5124E643F200D8010C /* Build configuration list for PBXNativeTarget "YoYo" */;
 			buildPhases = (
+				EF6A20DA3C6383988149FCF9 /* [CP] Check Pods Manifest.lock */,
 				7DE3FC3624E643EF00D8010C /* Sources */,
 				7DE3FC3724E643EF00D8010C /* Frameworks */,
 				7DE3FC3824E643EF00D8010C /* Resources */,
+				8960211E46F0CC3EBA7DDDBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,14 +190,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8960211E46F0CC3EBA7DDDBE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YoYo/Pods-YoYo-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YoYo/Pods-YoYo-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YoYo/Pods-YoYo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF6A20DA3C6383988149FCF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YoYo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DE3FC3624E643EF00D8010C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7DE3FC5924E6448100D8010C /* SlideView.swift in Sources */,
+				3A2C5C0324F6A6040057DDCE /* GoogleMapsView.swift in Sources */,
 				7DE3FC3E24E643EF00D8010C /* AppDelegate.swift in Sources */,
 				7DE3FC4324E643EF00D8010C /* YoYo.xcdatamodeld in Sources */,
+				3A2C5C0524F6A65C0057DDCE /* LocationManager.swift in Sources */,
 				7DE3FC4524E643EF00D8010C /* ContentView.swift in Sources */,
 				7DE3FC5724E6445500D8010C /* MainView.swift in Sources */,
 				7DE3FC4024E643EF00D8010C /* SceneDelegate.swift in Sources */,
@@ -302,10 +378,12 @@
 		};
 		7DE3FC5224E643F200D8010C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC815B3D7A230D2D46661262 /* Pods-YoYo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"YoYo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YoYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,10 +399,12 @@
 		};
 		7DE3FC5324E643F200D8010C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41627568599AB81340FD178C /* Pods-YoYo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"YoYo/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YoYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
