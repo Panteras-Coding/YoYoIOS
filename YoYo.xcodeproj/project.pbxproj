@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A2C5C0324F6A6040057DDCE /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */; };
 		3A2C5C0524F6A65C0057DDCE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */; };
+		7D3441F424F7260300CD7AE5 /* TravelMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3441F324F7260300CD7AE5 /* TravelMenuView.swift */; };
 		7DE3FC3E24E643EF00D8010C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC3D24E643EF00D8010C /* AppDelegate.swift */; };
 		7DE3FC4024E643EF00D8010C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC3F24E643EF00D8010C /* SceneDelegate.swift */; };
 		7DE3FC4324E643EF00D8010C /* YoYo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DE3FC4124E643EF00D8010C /* YoYo.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 		3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		41627568599AB81340FD178C /* Pods-YoYo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoYo.release.xcconfig"; path = "Target Support Files/Pods-YoYo/Pods-YoYo.release.xcconfig"; sourceTree = "<group>"; };
 		4627B9DE65D9948934BFE814 /* Pods_YoYo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoYo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3441F324F7260300CD7AE5 /* TravelMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMenuView.swift; sourceTree = "<group>"; };
 		7DE3FC3A24E643EF00D8010C /* YoYo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoYo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE3FC3D24E643EF00D8010C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DE3FC3F24E643EF00D8010C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,15 @@
 				4627B9DE65D9948934BFE814 /* Pods_YoYo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DDF494D24F6E92C00F012D4 /* Google Maps */ = {
+			isa = PBXGroup;
+			children = (
+				3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */,
+				3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */,
+			);
+			path = "Google Maps";
 			sourceTree = "<group>";
 		};
 		7DE3FC3124E643EF00D8010C = {
@@ -107,8 +118,8 @@
 			children = (
 				7DE3FC5624E6445500D8010C /* MainView.swift */,
 				7DE3FC5824E6448100D8010C /* SlideView.swift */,
-				3A2C5C0224F6A6040057DDCE /* GoogleMapsView.swift */,
-				3A2C5C0424F6A65C0057DDCE /* LocationManager.swift */,
+				7D3441F324F7260300CD7AE5 /* TravelMenuView.swift */,
+				7DDF494D24F6E92C00F012D4 /* Google Maps */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DE3FC5924E6448100D8010C /* SlideView.swift in Sources */,
+				7D3441F424F7260300CD7AE5 /* TravelMenuView.swift in Sources */,
 				3A2C5C0324F6A6040057DDCE /* GoogleMapsView.swift in Sources */,
 				7DE3FC3E24E643EF00D8010C /* AppDelegate.swift in Sources */,
 				7DE3FC4324E643EF00D8010C /* YoYo.xcdatamodeld in Sources */,
@@ -383,14 +395,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"YoYo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9985P7A397;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YoYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PanterasUP.YoYo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PanterasUP.YoYoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -404,14 +416,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"YoYo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9985P7A397;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = YoYo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.PanterasUP.YoYo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.PanterasUP.YoYoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

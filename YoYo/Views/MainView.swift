@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
-import MapKit
+import GoogleMaps
+import CoreLocation
 
 struct MainView: View {
     @Binding  var x : CGFloat
+    @State private var keyboardHeight: CGFloat = 0
     var body: some View {
         ZStack {
             GoogleMapsView().edgesIgnoringSafeArea(.all)
@@ -24,7 +26,7 @@ struct MainView: View {
                         ZStack {
                             Circle()
                                 .frame(width: 60, height: 60)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("Background"))
                                 .shadow(radius: 5, x: 5, y:5)
                             Image(systemName: "line.horizontal.3")
                                 .resizable()
@@ -37,49 +39,25 @@ struct MainView: View {
                 Spacer(minLength: 0)
                 HStack {
                     Spacer()
-                    Button(action: {}) {
+                    Button(action: {
+                        
+                    }) {
                         ZStack {
                             Circle()
                                 .frame(width: 60, height: 60)
-                                .foregroundColor(.white)
+                                .foregroundColor(Color("Background"))
                                 .shadow(radius: 5, x: 5, y:5)
                             Image(systemName: "location.fill")
                                 .resizable()
                                 .frame(width: 30, height: 30)
                                 .foregroundColor(Color("Red_YoYo"))
-                        }.padding(10)
+                        }.padding(.bottom)
                     }
-                }
-                ZStack {
-                    RoundedRectangle(cornerRadius: 25)
-                        .frame(width: screenWidth - 30, height: 80)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5, x: 5, y:5)
-                    VStack (spacing: 15){
-                        RoundedRectangle(cornerRadius: 25)
-                            .frame(width: 60, height: 5)
-                            .foregroundColor(Color("Red_Scroll"))
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25)
-                                .stroke(Color("Gray_YoYo"))
-                                .frame(width: screenWidth - 60, height: 40)
-                            Text("Origen")
-                                .foregroundColor(Color("Gray_YoYo"))
-                        }
-                    }
-                }.padding(.bottom)
+                }.frame(width: screenWidth - 30)
+                TravelMenuView()
             }
+            .padding(.bottom, keyboardHeight)
         }
-    }
-}
-
-struct MapView: UIViewRepresentable {
-    func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        return mapView
-    }
-    
-    func updateUIView(_ uiView: MKMapView, context: Context) {
     }
 }
 

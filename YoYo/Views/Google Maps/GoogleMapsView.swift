@@ -8,26 +8,28 @@
 
 import SwiftUI
 import GoogleMaps
-import Combine
+//import Combine
 
 struct GoogleMapsView: UIViewRepresentable {
         // Listen to changes on the locationManager
         @ObservedObject var locationManager = LocationManager()
 
         func makeUIView(context: Self.Context) -> GMSMapView {
-
             // Just default the camera to anywhere (this will be overwritten as soon as myLocation is grabbed
             let camera = GMSCameraPosition.camera(withLatitude: 0, longitude: 0, zoom: 16.0)
             let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
             mapView.setMinZoom(14, maxZoom: 20)
             mapView.settings.compassButton = true
             mapView.isMyLocationEnabled = true
-            mapView.settings.myLocationButton = true
+            
+//            mapView.settings.myLocationButton = true
             mapView.settings.scrollGestures = true
             mapView.settings.zoomGestures = true
             mapView.settings.rotateGestures = true
-            mapView.settings.tiltGestures = true
+//            mapView.settings.tiltGestures = true
             mapView.isIndoorEnabled = false
+            mapView.padding = UIEdgeInsets(top: 0, left: screenWidth - (screenWidth - 30), bottom: 420, right: 0)
+
 
             return mapView
         }
@@ -40,6 +42,7 @@ struct GoogleMapsView: UIViewRepresentable {
                 print("User's location: \(myLocation)")
             }
         }
+    
 }
 
 struct GoogleMapsView_Previews: PreviewProvider {
