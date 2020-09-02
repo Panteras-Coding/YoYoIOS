@@ -14,17 +14,26 @@ var edges = UIApplication.shared.windows.first?.safeAreaInsets
 
 struct ContentView: View {
     @State var x = 120 - screenWidth
+    @State var settingsViewShow : Bool = false
     var body: some View {
-        ZStack (alignment: .leading){
-            MainView(x: self.$x)
-            Color.black.opacity(x == 0 ? 0.5 : 0)
-                .edgesIgnoringSafeArea(.all)
-                .onTapGesture {
-                    withAnimation {
-                        self.x = 120 - screenWidth
+        NavigationView {
+            ZStack (alignment: .leading){
+                NavigationLink(destination: SettingsView(settingsViewShow: self.$settingsViewShow), isActive: self.$settingsViewShow) {
+                    Text("")
+                }.hidden()
+                MainView(x: self.$x)
+                Color.black.opacity(x == 0 ? 0.5 : 0)
+                    .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        withAnimation {
+                            self.x = 120 - screenWidth
+                        }
                     }
-                }
-            SlideView(x: self.$x).offset(x: x)
+                SlideView(x: self.$x, settingsViewShow: self.$settingsViewShow).offset(x: x)
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

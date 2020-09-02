@@ -10,12 +10,13 @@ import SwiftUI
 
 struct SlideView: View {
     @Binding var x : CGFloat
+    @Binding var settingsViewShow : Bool
     var body: some View {
         VStack (alignment: .leading) {
             // Top Items (Settings & Exit)
             HStack {
                 Button(action: {
-                    
+                    self.settingsViewShow.toggle()
                 }) {
                     Image("settings")
                         .resizable()
@@ -53,7 +54,6 @@ struct SlideView: View {
                     VStack(spacing: 20){
                         AhorroMensualView()
                         MisLugaresView()
-//                        LugaresPrincipalesView()
                     }
                     Spacer(minLength: 0)
                     Image("Logo_YoYo")

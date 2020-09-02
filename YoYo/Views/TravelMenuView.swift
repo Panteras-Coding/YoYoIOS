@@ -150,6 +150,10 @@ struct TravelMenuView: View {
 
 struct TravelView: View {
     @Binding var travelViewShow : Bool
+    @State var showDeatilCar : Bool = false
+    @State var showDeatilBike : Bool = false
+    @State var showDeatilScooter : Bool = false
+    @State var toggleB : String = "Price"
     var body: some View {
         VStack (spacing: 30) {
             HStack {
@@ -177,78 +181,156 @@ struct TravelView: View {
                         .foregroundColor(.gray)
                 }
             }
-            ZStack {
-                HStack {
-                    Image("Car")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 70, height: 40)
-                        .padding(.horizontal, 30)
-                    Spacer()
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .frame(width: 15, height: 25)
-                        .foregroundColor(Color("Red_YoYo"))
-                        .padding(.horizontal, 30)
+            ScrollView(showsIndicators: false) {
+                VStack (spacing: 20) {
+                    VStack (spacing: 25) {
+                        Button(action: {
+                            withAnimation {
+                                self.showDeatilCar.toggle()
+                                self.showDeatilScooter = false
+                                self.showDeatilBike = false
+                            }
+                        }) {
+                            ZStack {
+                                HStack {
+                                    Image("Car")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 70, height: 40)
+                                        .padding(.horizontal, 30)
+                                    Spacer()
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .frame(width: 15, height: 25)
+                                        .rotationEffect(.degrees(showDeatilCar ? -90 : 0))
+                                        .foregroundColor(Color("Red_YoYo"))
+                                        .padding(.horizontal, 30)
+                                }
+                                Text("Autos")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 20))
+                            }
+                            .frame(height: 50)
+                            
+                            
+                        }
+                        if showDeatilCar {
+                            VStack {
+                                Spacer().frame(height: 50)
+                            }
+                        }
+                        
+                    }
+                    .background(RoundedRectangle(cornerRadius: 10)
+                    .frame(width: screenWidth - 70)
+                    .foregroundColor(Color("Gray_YoYo")))
+                    
+                    VStack {
+                        Button(action: {
+                            withAnimation {
+                                self.showDeatilBike.toggle()
+                                self.showDeatilScooter = false
+                                self.showDeatilCar = false
+                            }
+                        }) {
+                            ZStack {
+                                HStack {
+                                    Image("Bike")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 60, height: 38)
+                                        .padding(.horizontal, 30)
+                                    Spacer()
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .frame(width: 15, height: 25)
+                                        .rotationEffect(.degrees(showDeatilBike ? -90 : 0))
+                                        .foregroundColor(Color("Red_YoYo"))
+                                        .padding(.horizontal, 30)
+                                }
+                                Text("Bicicletas")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 20))
+                            }.frame(height: 50)
+                        }
+                        if showDeatilBike{
+                            VStack {
+                                Spacer().frame(height: 50)
+                            }
+                        }
+                    }
+                    .background(RoundedRectangle(cornerRadius: 10)
+                    .frame(width: screenWidth - 70)
+                    .foregroundColor(Color("Gray_YoYo")))
+
+                    VStack (spacing: 25) {
+                        Button(action: {
+                            withAnimation {
+                                self.showDeatilScooter.toggle()
+                                self.showDeatilCar = false
+                                self.showDeatilBike = false
+                            }
+                        }) {
+                            ZStack {
+                                HStack {
+                                    Image("Scooter")
+                                        .renderingMode(.original)
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                        .padding(.horizontal, 30)
+                                    Spacer()
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .frame(width: 15, height: 25)
+                                        .rotationEffect(.degrees(showDeatilScooter ? -90 : 0))
+                                        .foregroundColor(Color("Red_YoYo"))
+                                        .padding(.horizontal, 30)
+                                }
+                                Text("Scooters")
+                                    .foregroundColor(.gray)
+                                    .font(.system(size: 20))
+                            }
+                            .frame(height: 50)
+                        }
+                        if showDeatilScooter {
+                            VStack {
+                                Spacer().frame(height: 50)
+                            }
+                        }
+                    }
+                    .background(RoundedRectangle(cornerRadius: 10)
+                    .frame(width: screenWidth - 70)
+                    .foregroundColor(Color("Gray_YoYo")))
                 }
-                Text("Autos")
-                .foregroundColor(.gray)
-                .font(.system(size: 20))
+                .frame(maxWidth: .infinity)
+                .padding(.top, 5)
+                Spacer()
             }
-            .background(RoundedRectangle(cornerRadius: 10)
-            .frame(width: screenWidth - 70, height: 50)
-            .foregroundColor(Color("Gray_YoYo")))
-            
-            ZStack {
-                HStack {
-                    Image("Bike")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 60, height: 38)
-                        .padding(.horizontal, 30)
-                    Spacer()
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .frame(width: 15, height: 25)
-                        .foregroundColor(Color("Red_YoYo"))
-                        .padding(.horizontal, 30)
-                }
-                Text("Bicicletas")
-                .foregroundColor(.gray)
-                .font(.system(size: 20))
-            }
-            .background(RoundedRectangle(cornerRadius: 10)
-            .frame(width: screenWidth - 70, height: 50)
-            .foregroundColor(Color("Gray_YoYo")))
-            
-            ZStack {
-                HStack {
-                    Image("Scooter")
-                        .renderingMode(.original)
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .padding(.horizontal, 30)
-                    Spacer()
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .frame(width: 15, height: 25)
-                        .foregroundColor(Color("Red_YoYo"))
-                        .padding(.horizontal, 30)
-                }
-                Text("Scooters")
-                .foregroundColor(.gray)
-                .font(.system(size: 20))
-            }
-            .background(RoundedRectangle(cornerRadius: 10)
-            .frame(width: screenWidth - 70, height: 50)
-            .foregroundColor(Color("Gray_YoYo")))
-            Spacer()
             
         }
         .frame(width: screenWidth - 70, height: 350)
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct ToggleButton: View {
+    @Binding var selected : String
+    var title: String
+    var body: some View {
+        Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+            ZStack {
+                Capsule()
+                    .fill(Color.clear)
+                    .frame(height: 45)
+                if selected == title {
+                    Capsule()
+                    .fill(Color.white)
+                    .frame(height: 45)
+                }
+            }
+        }
     }
 }
 
